@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 '''
 Created on 15 Mar 2017
 @author: David Fottrell
