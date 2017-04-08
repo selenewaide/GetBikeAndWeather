@@ -79,7 +79,7 @@ class dataPull(object):
         while (counter <= 12):          # This is for testing phase only, will change to a large number when proven
             gW = dataPull()  
             gW.getWeather()            # Calls the pullBikes class to execute a current bikes pull
-            gW.getBikes()
+            gW.getBike()
             time.sleep(900)           # Timing function waits 15 mins after triggering the data pull
             counter += 1    
             
