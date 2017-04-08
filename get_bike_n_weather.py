@@ -76,10 +76,11 @@ class dataPull(object):
         counter = 0
         # Note - requests should not be more than once every 10 minutes
         # This timer will be used to prevent excessive calls to the bikes API
-        while (counter <= 12):          # This is for testing phase only, will change to a large number when proven
+        while (counter <= 1344):          # This is for testing phase only, will change to a large number when proven
             gW = dataPull()  
             gW.getWeather()            # Calls the pullBikes class to execute a current bikes pull
             gW.getBike()
+            print("sleeping for 15 mins")
             time.sleep(900)           # Timing function waits 15 mins after triggering the data pull
             counter += 1    
             
