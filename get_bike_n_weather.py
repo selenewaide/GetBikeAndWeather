@@ -26,8 +26,6 @@ class dataPull(object):
         # This is a variable to contain the www.openweathermap.org call for current weather in Dublin with an API key
         srcdata = requests.get('http://api.openweathermap.org/data/2.5/weather?id=7778677&APPID=0b1d40f0f5b1bc4af97416f01400dd72&units=metric')
         
-        # For later, use TRY: and EXCEPT: functions as taught in Web Dev class
-        
         if (srcdata.status_code != 200):
             print("Error - did not receive status code 200 from Open Weather!")
         
@@ -38,7 +36,7 @@ class dataPull(object):
             
             # Now write this file to disk
             filehandle = open(filename, 'w')
-            filehandle.write(srcdata.text)       # TypeError: write() argument must be str, not Response
+            filehandle.write(srcdata.text)       
             filehandle.close()
         return
     
@@ -55,22 +53,21 @@ class dataPull(object):
             
             # Now write this file to disk
             filehandle = open(filename, 'w')
-            filehandle.write(srcdata.text)       # TypeError: write() argument must be str, not Response
+            filehandle.write(srcdata.text)      
             filehandle.close()
         return
     
     
     def timer(self):
         counter = 0
-        # Note - requests should not be more than once every 10 minutes
-        # This timer will be used to prevent excessive calls to the bikes API
-        while (counter <= 1344):          # This is for testing phase only, will change to a large number when proven
+        
+        while (counter <= 1344):         
             filestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
             gW = dataPull()  
-            gW.getWeather(filestamp)            # Calls the pullBikes class to execute a current bikes pull
+            gW.getWeather(filestamp)            
             gW.getBike(filestamp)
             print("sleeping for 15 mins_", filestamp)
-            time.sleep(900)           # Timing function waits 15 mins after triggering the data pull
+            time.sleep(900)           
             counter += 1    
             
 if __name__ == '__main__':
