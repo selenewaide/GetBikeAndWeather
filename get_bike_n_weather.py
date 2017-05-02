@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-'''
-Created on 15 Mar 2017
-@author: David Fottrell
-'''
+
 import time
 import datetime
 import requests
@@ -13,16 +10,6 @@ def main():
     return
 
 class dataPull(object):
-    '''
-    classdocs
-    
-    This class was created to facilitate pulling in API data at regular intervals.  At this point, it is configured
-    to pull in current weather data for Dublin from www.openweathermap.org, at 5 minute intervals.
-    
-    The same data structure can be used to pull in data from other sources on the same time interval.
-    
-    '''
-
 
     def __init__(self):
         '''
