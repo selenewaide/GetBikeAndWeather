@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+"""
+Get bike and weather json files using API
+"""
+
+
 import time
 import datetime
 import requests
